@@ -256,3 +256,26 @@ def position_encoding(sentence_size, embedding_size):
             encoding[i-1, j-1] = (i - (le-1)/2) * (j - (ls-1)/2)
     encoding = 1 + 4 * encoding / embedding_size / sentence_size
     return np.transpose(encoding)
+
+if __name__ == '__main__':
+    S, testS, Q, testQ, is_Q, test_is_Q, A, testA, train, test, vocab_size, word_idx = load_stacked_data(
+        dataset_dir='../datasets/BABI/tasks_1-20_v1-2/')
+
+    print('\nText:')
+    print(print_data(train[0]))
+
+    print('\nStory:')
+    print(S.shape)
+    print(S[0])
+
+    print('\nQuery:')
+    print(Q.shape)
+    print(Q[0])
+
+    print('\nIs query (only relevant to identify the query when given sequentially with the text):')
+    print(is_Q.shape)
+    print(is_Q[0])
+
+    print('\nAnswer:')
+    print(A.shape)
+    print(A[0])

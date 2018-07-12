@@ -39,7 +39,7 @@ gd_noise = .000  # STD of the noise added to each variable at every training epo
 
 # Construct the data
 trainS, testS, trainQ, testQ, trainA, testA, text_train, text_test, n_vocab = load_data(
-    dataset_dir='../../datasets/BABI/tasks_1-20_v1-2/', dataset_suffix='en')
+    dataset_dir='../datasets/BABI/tasks_1-20_v1-2/', dataset_suffix='en')
 N, n_sentence, n_word = trainS.shape
 n_out = n_vocab
 
